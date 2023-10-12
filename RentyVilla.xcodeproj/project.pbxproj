@@ -18,6 +18,9 @@
 		19B33C812AD6C936003C4D42 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19B33C802AD6C936003C4D42 /* Raleway-SemiBold.ttf */; };
 		19B33C832AD6C93D003C4D42 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19B33C822AD6C93D003C4D42 /* Raleway-Medium.ttf */; };
 		19B33C852AD6C944003C4D42 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19B33C842AD6C944003C4D42 /* Raleway-Regular.ttf */; };
+		19B33C882AD6CCAC003C4D42 /* SideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C872AD6CCAC003C4D42 /* SideCell.swift */; };
+		19B33C8A2AD6CDCD003C4D42 /* SideCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C892AD6CDCD003C4D42 /* SideCollection.swift */; };
+		19B33C8C2AD6CDE0003C4D42 /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C8B2AD6CDE0003C4D42 /* SideMenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		19B33C822AD6C93D003C4D42 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		19B33C842AD6C944003C4D42 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		19B33C862AD6C952003C4D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		19B33C872AD6CCAC003C4D42 /* SideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideCell.swift; sourceTree = "<group>"; };
+		19B33C892AD6CDCD003C4D42 /* SideCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideCollection.swift; sourceTree = "<group>"; };
+		19B33C8B2AD6CDE0003C4D42 /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		19B33C6E2AD6C6FB003C4D42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19B33C8B2AD6CDE0003C4D42 /* SideMenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				19B33C772AD6C78C003C4D42 /* SideMenuView.swift */,
+				19B33C872AD6CCAC003C4D42 /* SideCell.swift */,
+				19B33C892AD6CDCD003C4D42 /* SideCollection.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -253,9 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B33C782AD6C78C003C4D42 /* SideMenuView.swift in Sources */,
+				19B33C8C2AD6CDE0003C4D42 /* SideMenuModel.swift in Sources */,
 				19B33C7B2AD6C7A7003C4D42 /* RoundedShapeRect.swift in Sources */,
+				19B33C8A2AD6CDCD003C4D42 /* SideCollection.swift in Sources */,
 				19B33C7D2AD6C7CE003C4D42 /* Home.swift in Sources */,
 				19B33C602AD6C699003C4D42 /* ContentView.swift in Sources */,
+				19B33C882AD6CCAC003C4D42 /* SideCell.swift in Sources */,
 				19B33C5E2AD6C699003C4D42 /* RentyVillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct SideCell: View {
-    var menuItems: SideMenuModel = .home
-    @State var isImageSelected = true
+    var menuItems: SideMenuModel = .profile
+    var isImageSelected: Bool = false
     var body: some View {
         HStack(spacing: 20) {
-            Image(isImageSelected ? menuItems.imageSelected : menuItems.imageNotSelected)
+            Image(systemName: menuItems.image)
                 .resizable()
                 .frame(width: 20, height: 20)
+                .foregroundStyle(isImageSelected ? .backgroundButton : .white)
             Text(menuItems.title)
-                .foregroundStyle(isImageSelected ? .white : .backgroundButton)
+                .foregroundStyle(isImageSelected ? .backgroundButton : .white)
                 .font(.custom("Raleway-Medium", size: 20))
             Spacer()
         }

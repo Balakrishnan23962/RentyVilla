@@ -11,6 +11,12 @@ enum SideMenuModel: String, CaseIterable, Identifiable {
     case home
     case profile
     case nearby
+    case bookmark
+    case notificaiton
+    case message
+    case settings
+    case help
+    case logOut
     var id: SideMenuModel { return self }
     var title: String {
         switch self {
@@ -20,28 +26,42 @@ enum SideMenuModel: String, CaseIterable, Identifiable {
             return "Profile"
         case .nearby:
             return "Nearby"
+        case .bookmark:
+            return "Bookmark"
+        case .notificaiton:
+            return "Notification"
+        case .message:
+            return "Message"
+        case .settings:
+            return "Setting"
+        case .help:
+            return "Help"
+        case .logOut:
+            return "Logout"
         }
     }
     
-    var imageNotSelected: String {
+    var image: String {
         switch self {
         case .home:
-            return "homeWhite"
+            return "house"
         case .profile:
-            return "profileWhite"
+            return "person"
         case .nearby:
-            return "locationWhite"
+            return "location"
+        case .bookmark:
+            return "bookmark"
+        case .notificaiton:
+            return "bell"
+        case .message:
+            return "message"
+        case .settings:
+            return "gearshape"
+        case .help:
+            return "questionmark.circle"
+        case .logOut:
+            return "power"
         }
     }
     
-    var imageSelected: String {
-        switch self {
-        case .home:
-            return "homeBlue"
-        case .profile:
-            return "profileBlue"
-        case .nearby:
-            return "locationBlue"
-        }
-    }
 }

@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct SideMenuView: View {
+    @Binding var isShow: Bool
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topTrailing) {
             Color(.backgroundMenu)
                 .ignoresSafeArea()
-            VStack {
-                SideCollection()
+            VStack(alignment: .trailing) {
+                Button(action: {
+                    withAnimation(.bouncy) {
+                        isShow.toggle()
+                    }
+                }, label: {
+                    Image(systemName: "xmark")
+                        .frame(width: 32, height: 32)
+                        .foregroundStyle(.white)
+                        .padding()
+            })
+                HStack {
+                    SideCollection()
+                }
             }
         }
+        .toolbar(.hidden)
     }
 }
 
 #Preview {
-    SideMenuView()
+    SideMenuView(isShow: .constant(false))
 }

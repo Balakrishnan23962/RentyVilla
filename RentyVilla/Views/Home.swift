@@ -14,17 +14,17 @@ struct Home: View {
             ZStack {
                 Color(.white)
             }
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "list.bullet")
-                            .foregroundStyle(.black)
-                    })
-                }
-            }
-            .navigationTitle("Home")
+//            .toolbar {
+//                ToolbarItem(placement: .topBarLeading) {
+//                    Button(action: {
+//                        
+//                    }, label: {
+//                        Image(systemName: "list.bullet")
+//                            .foregroundStyle(.black)
+//                    })
+//                }
+//            }
+//            .navigationTitle("Home")
         }
 
     }

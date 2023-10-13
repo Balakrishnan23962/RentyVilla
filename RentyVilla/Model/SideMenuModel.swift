@@ -18,6 +18,7 @@ enum SideMenuModel: String, CaseIterable, Identifiable {
     case help
     case logOut
     var id: SideMenuModel { return self }
+    
     var title: String {
         switch self {
         case .home:

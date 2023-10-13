@@ -26,18 +26,21 @@ struct SideCollection: View {
     
     @ViewBuilder
     private func createMenuButton(index: Int) -> some View {
-        NavigationLink {
-            DestinationView(index: index)
+        Button {
+            selectedMenuItem = SideMenuModel.allCases[index]
+//            DestinationView(index: index)
         } label: {
             SideCell(menuItems: SideMenuModel.allCases[index], isImageSelected: selectedMenuItem == SideMenuModel.allCases[index])
-                .background {
-                    if selectedMenuItem == SideMenuModel.allCases[index] {
-                        RoundedShapeRect(cornerRadius: 20)
-                            .frame(width: 220, height: 40)
-                            .padding(.trailing, 250)
-                            .foregroundStyle(.white)
-                    }
+        }
+        .background {
+            if selectedMenuItem == SideMenuModel.allCases[index] {
+                withAnimation(.smooth) {
+                    RoundedShapeRect(cornerRadius: 20)
+                        .frame(width: 220, height: 40)
+                        .padding(.trailing, 250)
+                        .foregroundStyle(.white)
                 }
+            }
         }
 
     }
@@ -50,7 +53,7 @@ struct SideCollection: View {
 #Preview {
     SideCollection()
 }
-
+/*
 struct DestinationView: View {
     var index: Int = 0
     var body: some View {
@@ -78,3 +81,4 @@ struct DestinationView: View {
         }
     }
 }
+*/

@@ -8,36 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var appEnv: AppEnvironment
+//    @EnvironmentObject var : AppEnvironment
+    @State var isShowing = false
     var body: some View {
         NavigationStack {
             ZStack {
-                if appEnv.isShowing {
-                    SideMenuView(isShow: $appEnv.isShowing)
+                if isShowing {
+                    SideMenuView(isShow: $isShowing)
                 }
-                Home()
-                    .clipShape(RoundedRectangle(cornerRadius: appEnv.isShowing ? 20 : 10))
-                    .offset(x: appEnv.isShowing ? 230 : 0, y: appEnv.isShowing ? 44 : 0)
-                    .scaleEffect(appEnv.isShowing ? 0.96 : 1.0)
-                    .shadow(color: appEnv.isShowing ? .black : .clear, radius: 12)
+                Home(isShow: $isShowing)
+                    .clipShape(RoundedRectangle(cornerRadius: isShowing ? 20 : 10))
+                    .offset(x: isShowing ? 230 : 0, y: isShowing ? 44 : 0)
+                    .scaleEffect(isShowing ? 0.96 : 1.0)
+                    .shadow(color: isShowing ? .black : .clear, radius: 12)
                     .onTapGesture {
                         withAnimation(.bouncy) {
-                            appEnv.isShowing = false
+                            isShowing = false
                         }
                     }
-                    .toolbar {
-                        ToolbarItem(placement: .topBarLeading) {
-                            Button(action: {
-                                withAnimation(.bouncy) {
-                                    appEnv.isShowing = true
-                                }
-                            }, label: {
-                                Image(systemName: "list.bullet")
-                                    .foregroundStyle(.black)
-                            })
-                        }
-                    }
-                    .navigationTitle("Home")
             }
         }
     }
@@ -45,5 +33,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(AppEnvironment())
+//        .environmentObject(AppEnvironment())
 }

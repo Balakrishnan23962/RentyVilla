@@ -9,6 +9,7 @@ import Foundation
 
 protocol DataManagerProtocol {
     func getImageDetails() -> Result<[ImageDetailsModel], Error>
+    func getBestCategory() -> Result<[BestCategoryModel], Error>
 }
 
 class DataManager {
@@ -17,6 +18,19 @@ class DataManager {
 }
 
 extension DataManager: DataManagerProtocol {
+    
+    func getBestCategory() -> Result<[BestCategoryModel], Error> {
+        var result: Result<[BestCategoryModel], Error>
+        let mockData = imageMock.getBestHouse()
+        switch mockData {
+        case .success(let success):
+            result = .success(success)
+        case .failure(let failure):
+            result = .failure(failure)
+        }
+        return result
+    }
+    
     func getImageDetails() -> Result<[ImageDetailsModel], Error> {
         var result: Result<[ImageDetailsModel], Error>
         let mockResult = imageMock.getImageDetails()

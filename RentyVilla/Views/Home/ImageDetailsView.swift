@@ -14,7 +14,7 @@ struct ImageDetailsView: View {
             ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
                 Image(imageDetails?.image ?? "house1")
                     .resizable()
-                    .frame(width: 250, height: 290)
+                    .frame(width: 220, height: 290)
                     .clipShape(RoundedRectangle(cornerRadius: 23))
                 VStack(alignment: .leading) {
                     Text(imageDetails?.houseName ?? "House1")

@@ -36,8 +36,8 @@ struct SideCollection: View {
             if selectedMenuItem == SideMenuModel.allCases[index] {
                 withAnimation(.smooth) {
                     RoundedShapeRect(cornerRadius: 20)
-                        .frame(width: 220, height: 40)
-                        .padding(.trailing, 250)
+                        .frame(minWidth: 220, idealWidth: 220, maxWidth: .infinity, minHeight: 40, idealHeight: 40, maxHeight: 40)
+                        .padding(.trailing, 220)
                         .foregroundStyle(.white)
                 }
             }

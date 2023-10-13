@@ -11,6 +11,13 @@
 		1960F92C2AD81B9E0012725B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1960F92B2AD81B9E0012725B /* AppEnvironment.swift */; };
 		19808CE82AD902960059EC13 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CE72AD902960059EC13 /* CategoryModel.swift */; };
 		19808CEB2AD927A70059EC13 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CEA2AD927A70059EC13 /* CategoryView.swift */; };
+		19808CED2AD93B490059EC13 /* NearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CEC2AD93B480059EC13 /* NearView.swift */; };
+		19808CEF2AD93CC30059EC13 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CEE2AD93CC30059EC13 /* CustomFont.swift */; };
+		19808CF22AD96A200059EC13 /* ImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CF12AD96A200059EC13 /* ImageDetailsView.swift */; };
+		19808CF42AD96A810059EC13 /* ImageDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CF32AD96A810059EC13 /* ImageDetailsModel.swift */; };
+		19808CF62AD96B1C0059EC13 /* ImageDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CF52AD96B1C0059EC13 /* ImageDetailsViewModel.swift */; };
+		19808CF82AD96B370059EC13 /* imageDetailsMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CF72AD96B370059EC13 /* imageDetailsMockData.swift */; };
+		19808CFA2AD96D150059EC13 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19808CF92AD96D150059EC13 /* DataManager.swift */; };
 		19B33C5E2AD6C699003C4D42 /* RentyVillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C5D2AD6C699003C4D42 /* RentyVillaApp.swift */; };
 		19B33C602AD6C699003C4D42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C5F2AD6C699003C4D42 /* ContentView.swift */; };
 		19B33C622AD6C69B003C4D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B33C612AD6C69B003C4D42 /* Assets.xcassets */; };
@@ -32,6 +39,13 @@
 		1960F92B2AD81B9E0012725B /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		19808CE72AD902960059EC13 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		19808CEA2AD927A70059EC13 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		19808CEC2AD93B480059EC13 /* NearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearView.swift; sourceTree = "<group>"; };
+		19808CEE2AD93CC30059EC13 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		19808CF12AD96A200059EC13 /* ImageDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsView.swift; sourceTree = "<group>"; };
+		19808CF32AD96A810059EC13 /* ImageDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsModel.swift; sourceTree = "<group>"; };
+		19808CF52AD96B1C0059EC13 /* ImageDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModel.swift; sourceTree = "<group>"; };
+		19808CF72AD96B370059EC13 /* imageDetailsMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageDetailsMockData.swift; sourceTree = "<group>"; };
+		19808CF92AD96D150059EC13 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		19B33C5A2AD6C699003C4D42 /* RentyVilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RentyVilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B33C5D2AD6C699003C4D42 /* RentyVillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentyVillaApp.swift; sourceTree = "<group>"; };
 		19B33C5F2AD6C699003C4D42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +80,8 @@
 			children = (
 				19B33C7C2AD6C7CE003C4D42 /* Home.swift */,
 				19808CEA2AD927A70059EC13 /* CategoryView.swift */,
+				19808CEC2AD93B480059EC13 /* NearView.swift */,
+				19808CF12AD96A200059EC13 /* ImageDetailsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -116,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				1960F92B2AD81B9E0012725B /* AppEnvironment.swift */,
+				19808CF52AD96B1C0059EC13 /* ImageDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -136,6 +153,7 @@
 			children = (
 				19B33C8B2AD6CDE0003C4D42 /* SideMenuModel.swift */,
 				19808CE72AD902960059EC13 /* CategoryModel.swift */,
+				19808CF32AD96A810059EC13 /* ImageDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +181,7 @@
 			children = (
 				19B33C732AD6C756003C4D42 /* Mocks */,
 				19B33C722AD6C74D003C4D42 /* Remote */,
+				19808CF92AD96D150059EC13 /* DataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -177,6 +196,7 @@
 		19B33C732AD6C756003C4D42 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				19808CF72AD96B370059EC13 /* imageDetailsMockData.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -203,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				19B33C7A2AD6C7A7003C4D42 /* RoundedShapeRect.swift */,
+				19808CEE2AD93CC30059EC13 /* CustomFont.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -281,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19808CF82AD96B370059EC13 /* imageDetailsMockData.swift in Sources */,
 				19B33C782AD6C78C003C4D42 /* SideMenuView.swift in Sources */,
 				1960F92A2AD8097D0012725B /* ProfileView.swift in Sources */,
 				19808CEB2AD927A70059EC13 /* CategoryView.swift in Sources */,
@@ -288,11 +310,17 @@
 				19B33C7B2AD6C7A7003C4D42 /* RoundedShapeRect.swift in Sources */,
 				19B33C8A2AD6CDCD003C4D42 /* SideCollection.swift in Sources */,
 				1960F92C2AD81B9E0012725B /* AppEnvironment.swift in Sources */,
+				19808CEF2AD93CC30059EC13 /* CustomFont.swift in Sources */,
+				19808CF62AD96B1C0059EC13 /* ImageDetailsViewModel.swift in Sources */,
 				19B33C7D2AD6C7CE003C4D42 /* Home.swift in Sources */,
 				19808CE82AD902960059EC13 /* CategoryModel.swift in Sources */,
 				19B33C602AD6C699003C4D42 /* ContentView.swift in Sources */,
 				19B33C882AD6CCAC003C4D42 /* SideCell.swift in Sources */,
+				19808CFA2AD96D150059EC13 /* DataManager.swift in Sources */,
+				19808CF42AD96A810059EC13 /* ImageDetailsModel.swift in Sources */,
 				19B33C5E2AD6C699003C4D42 /* RentyVillaApp.swift in Sources */,
+				19808CF22AD96A200059EC13 /* ImageDetailsView.swift in Sources */,
+				19808CED2AD93B490059EC13 /* NearView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

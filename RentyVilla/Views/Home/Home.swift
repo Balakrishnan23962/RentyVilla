@@ -43,6 +43,7 @@ struct Home: View {
             }
             .padding()
             CategoryView()
+            NearView()
             Spacer()
         }
         .background {

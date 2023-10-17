@@ -36,6 +36,7 @@
 		19B33C882AD6CCAC003C4D42 /* SideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C872AD6CCAC003C4D42 /* SideCell.swift */; };
 		19B33C8A2AD6CDCD003C4D42 /* SideCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C892AD6CDCD003C4D42 /* SideCollection.swift */; };
 		19B33C8C2AD6CDE0003C4D42 /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B33C8B2AD6CDE0003C4D42 /* SideMenuModel.swift */; };
+		19EBF08D2ADE3E5D00529622 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EBF08C2ADE3E5D00529622 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		19B33C872AD6CCAC003C4D42 /* SideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideCell.swift; sourceTree = "<group>"; };
 		19B33C892AD6CDCD003C4D42 /* SideCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideCollection.swift; sourceTree = "<group>"; };
 		19B33C8B2AD6CDE0003C4D42 /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
+		19EBF08C2ADE3E5D00529622 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		19B33C6D2AD6C6F0003C4D42 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19EBF08B2ADE3E4900529622 /* House */,
 				19808CE92AD927920059EC13 /* Home */,
 				19B33C762AD6C76E003C4D42 /* Components */,
 				19B33C752AD6C768003C4D42 /* SideMenu */,
@@ -240,6 +243,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		19EBF08B2ADE3E4900529622 /* House */ = {
+			isa = PBXGroup;
+			children = (
+				19EBF08C2ADE3E5D00529622 /* DetailsView.swift */,
+			);
+			path = House;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,6 +330,7 @@
 				1960F92A2AD8097D0012725B /* ProfileView.swift in Sources */,
 				1941814F2AD9973C003676DC /* BestCategoryModel.swift in Sources */,
 				19808CEB2AD927A70059EC13 /* CategoryView.swift in Sources */,
+				19EBF08D2ADE3E5D00529622 /* DetailsView.swift in Sources */,
 				19B33C8C2AD6CDE0003C4D42 /* SideMenuModel.swift in Sources */,
 				19B33C7B2AD6C7A7003C4D42 /* RoundedShapeRect.swift in Sources */,
 				19B33C8A2AD6CDCD003C4D42 /* SideCollection.swift in Sources */,

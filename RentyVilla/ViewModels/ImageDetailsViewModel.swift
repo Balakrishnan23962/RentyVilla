@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Observation
 
 class ImageDetailsViewModel: ObservableObject {
     @Published var imageDetails: [ImageDetailsModel] = []
@@ -22,6 +22,7 @@ extension ImageDetailsViewModel {
         let result = dataManager.getImageDetails()
         switch result {
         case .success(let success):
+            imageDetails.removeAll(keepingCapacity: false)
             imageDetails.append(contentsOf: success)
         case .failure(let failure):
             print(failure.localizedDescription)

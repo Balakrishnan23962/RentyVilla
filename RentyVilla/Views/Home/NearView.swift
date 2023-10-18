@@ -16,27 +16,31 @@ struct NearView: View {
                     Text("Near from you")
                         .font(.ralewayMedium(size: 16))
                     Spacer()
-                    Text("See more")
-                        .font(.ralewayRegular(size: 12))
-                        .foregroundStyle(.gray)
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("See more")
+                            .font(.ralewayRegular(size: 12))
+                            .foregroundStyle(.gray)
+                    })
                 }
                 .padding()
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 20) {
                         ForEach(viewModel.imageDetails) { image in
                             NavigationLink {
-                                DetailsView()
+//                                DetailsView()
                             } label: {
                                 ImageDetailsView(imageDetails: image)
                             }
 
                         }
                     }
-                    .scrollTargetLayout()
+//                    .scrollTargetLayout()
                     .padding()
                 }
                 .scrollIndicators(.hidden)
-                .scrollTargetBehavior(.viewAligned)
+//                .scrollTargetBehavior(.viewAligned)
             }
             .onAppear {
                 viewModel.getImage()

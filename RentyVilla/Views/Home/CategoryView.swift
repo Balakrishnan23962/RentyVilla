@@ -28,19 +28,19 @@ struct CategoryView: View {
                 .background(Color(.systemGray6).opacity(0.4))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.leading)
-                Button(action: {
-                    if !search.isEmpty {
+                if !search.isEmpty {
+                    Button {
                         search = ""
-                    } else {
-                        
-                    }
-                }, label: {
-                    if !search.isEmpty {
+                        hideKeyboard()
+                    } label: {
                         Text("Cancel")
                             .padding(.trailing)
                             .foregroundStyle(.gray)
                     }
-                    else {
+                } else {
+                    Button {
+                        
+                    } label: {
                         Image(systemName: "slider.horizontal.3")
                             .foregroundStyle(.white)
                             .padding()
@@ -50,7 +50,7 @@ struct CategoryView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                             .padding(.trailing)
                     }
-                })
+                }
             }
             ScrollView(.horizontal) {
                 HStack {
@@ -69,12 +69,12 @@ struct CategoryView: View {
                                 isSelectedCategory = category
                             }
                     }
-                    .scrollTargetLayout()
+//                    .scrollTargetLayout()
                 }
                 .padding()
             }
             .scrollIndicators(.hidden)
-            .scrollTargetBehavior(.viewAligned)
+//            .scrollTargetBehavior(.viewAligned)
         }
     }
 }

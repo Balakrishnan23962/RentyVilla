@@ -11,21 +11,23 @@ struct SideCollection: View {
     @State var selectedMenuItem: SideMenuModel? = .home
 
     var body: some View {
-        VStack {
-            ForEach(SideMenuModel.allCases.indices, id: \.self) { index in
-                createMenuButton(index: index)
-                if shouldAddRectangle(index: index) {
-                    Rectangle()
-                        .frame(width: 190, height: 1)
-                        .foregroundStyle(.white)
-                        .padding(.trailing, 200)
+        GeometryReader { geometry in
+            VStack {
+                ForEach(SideMenuModel.allCases.indices, id: \.self) { index in
+                    createMenuButton(index: index, geometry: geometry)
+                    if shouldAddRectangle(index: index) {
+                        Rectangle()
+                            .frame(width: geometry.size.width / 2, height: 1)
+                            .foregroundStyle(.white)
+                            .padding(.trailing, geometry.size.width / 2)
+                    }
                 }
             }
         }
     }
     
     @ViewBuilder
-    private func createMenuButton(index: Int) -> some View {
+    private func createMenuButton(index: Int, geometry: GeometryProxy) -> some View {
         Button {
             selectedMenuItem = SideMenuModel.allCases[index]
 //            DestinationView(index: index)
@@ -36,8 +38,8 @@ struct SideCollection: View {
             if selectedMenuItem == SideMenuModel.allCases[index] {
                 withAnimation(.smooth) {
                     RoundedShapeRect(cornerRadius: 20)
-                        .frame(minWidth: 220, idealWidth: 220, maxWidth: .infinity, minHeight: 40, idealHeight: 40, maxHeight: 40)
-                        .padding(.trailing, 220)
+                        .frame(width: geometry.size.width / 2, height: geometry.size.height / 20)
+                        .padding(.trailing, geometry.size.width / 2)
                         .foregroundStyle(.white)
                 }
             }

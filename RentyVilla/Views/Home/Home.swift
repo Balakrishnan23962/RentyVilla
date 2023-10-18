@@ -47,7 +47,6 @@ struct Home: View {
                     CategoryView()
                     NearView()
                     BestForYouView()
-                    Spacer()
                 }
             }
         }

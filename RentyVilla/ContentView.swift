@@ -18,7 +18,7 @@ struct ContentView: View {
                 }
                 Home(isShow: $isShowing)
                     .clipShape(RoundedRectangle(cornerRadius: isShowing ? 20 : 10))
-                    .offset(x: isShowing ? 230 : 0, y: isShowing ? 44 : 0)
+                    .offset(x: isShowing ? UIScreen.main.bounds.width / 1.7  : 0, y: isShowing ? 44 : 0)
                     .scaleEffect(isShowing ? 0.96 : 1.0)
                     .shadow(color: isShowing ? .black : .clear, radius: 12)
                     .onTapGesture {

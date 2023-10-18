@@ -10,21 +10,25 @@ import SwiftUI
 struct BestForYouView: View {
     @StateObject var viewModel = BestCategoryViewModel()
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
                 Text("Best for you")
                     .font(.ralewayMedium(size: 16))
                 Spacer()
-                Text("See more")
-                    .font(.ralewayRegular(size: 12))
-                    .foregroundStyle(.gray)
+                Button(action: {
+                    
+                }, label: {
+                    Text("See more")
+                        .font(.ralewayRegular(size: 12))
+                        .foregroundStyle(.gray)
+                })
             }
             .padding()
-            VStack {
-                ForEach(viewModel.bestCategories, id: \.id) { category in
-                    BestForCell(category: category)
-                }
+            ForEach(viewModel.bestCategories, id: \.id) { category in
+                BestForCell(category: category)
             }
+            .padding(.leading)
+            .padding([.bottom], 10)
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Observation
+import UIKit
 
 class ImageDetailsViewModel: ObservableObject {
     @Published var imageDetails: [ImageDetailsModel] = []
@@ -28,4 +29,8 @@ extension ImageDetailsViewModel {
             print(failure.localizedDescription)
         }
     }
+}
+func hideKeyboard() {
+    UIApplication.shared
+        .sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }

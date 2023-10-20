@@ -29,18 +29,18 @@ struct NearView: View {
                     LazyHStack(spacing: 20) {
                         ForEach(viewModel.imageDetails) { image in
                             NavigationLink {
-//                                DetailsView()
+                                DetailsView()
                             } label: {
                                 ImageDetailsView(imageDetails: image)
                             }
 
                         }
                     }
-//                    .scrollTargetLayout()
+                    .scrollTargetLayout()
                     .padding()
                 }
                 .scrollIndicators(.hidden)
-//                .scrollTargetBehavior(.viewAligned)
+                .scrollTargetBehavior(.viewAligned)
             }
             .onAppear {
                 viewModel.getImage()

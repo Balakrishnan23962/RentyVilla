@@ -9,73 +9,78 @@ import Foundation
 import SwiftUI
 
 struct DetailsView: View {
-    @Environment(\.dismiss) var dismiss
+    @State private var expanded: Bool = false
+    @State private var showViewButton: Bool = false
+    @State var isSelected = false
+    let text = """
+        The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars. This modern house is perfect for a growing family. The modern design features state-of-the-art architecture and contemporary elements. The large pool is ideal for hot summer days, and the spacious four-car garage provides ample space for all your vehicles.
+        """
     var body: some View {
-        VStack {
-            ZStack(alignment: .bottomLeading) {
-                ZStack(alignment: .topTrailing) {
-                    ZStack(alignment: .topLeading) {
-                        Image(.house2)
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.width - 32, height: (UIScreen.main.bounds.height / 2.5))
-                            .clipShape(RoundedRectangle(cornerRadius: 27))
-                        Button(action: {
-                            dismiss()
-                        }, label: {
-                            Image(systemName: "chevron.left")
-                                .resizable()
-                                .foregroundStyle(.white)
-                                .frame(width: 10, height: 15)
-                                .padding()
-                                .background {
-                                    Circle()
-                                        .foregroundStyle(.black).opacity(0.2)
+        ScrollView {
+            VStack {
+                OwnerDetails(isSelected: $expanded)
+                VStack(alignment: .leading, spacing: 20, content: {
+                    Text("Description")
+                        .font(.ralewayMedium(size: 16))
+                        .fontWeight(.semibold)
+                    Text(expanded ? text : text.prefix(100)+"...")
+                       
+                        .font(.ralewayRegular(size: 14))
+                        .foregroundStyle(.gray)
+                        .overlay {
+                            GeometryReader(content: { proxy in
+                                Color.clear.onAppear {
+                                    let width = proxy.size.width
+                                    print("Text width: \(width)")
                                 }
-                                .padding()
+                                Button(action: {
+                                    withAnimation(.bouncy) {
+                                        expanded.toggle()
+                                    }
+                                }, label: {
+                                    Text(expanded ? "Show Less" : "Show More")
+                                        .font(.ralewayRegular(size: 14))
+                                })
+                                .frame(width: proxy.size.width, height: proxy.size.height, alignment: .bottomTrailing)
+                            })
+                        }
+                })
+                .padding()
+                PersonDetails()
+                GalleryImages()
+                ZStack(alignment: .bottom, content: {
+                    LocationOfHouse()
+                        .frame(height: 150)
+                        .frame(maxWidth: .infinity)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .padding()
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10, content: {
+                            Text("Price")
+                            Text("2.50000000 / Year")
+                        })
+                        Spacer()
+                        Button(action: {
+                            
+                        }, label: {
+                            Text("Rent Now")
                         })
                     }
-                    Image(systemName: "bookmark")
-                        .resizable()
-                        .foregroundStyle(.white)
-                        .frame(width: 10, height: 15)
-                        .padding()
-                        .background {
-                            Circle()
-                                .foregroundStyle(.black).opacity(0.2)
-                        }
-                        .padding()
-                }
-                VStack(alignment: .leading, spacing: 15) {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("DreamsVille House")
-                            .font(.ralewaySemibold(size: 20))
-                            .foregroundStyle(.white)
-                        Text("2/29, Kunnathur - 638103")
-                            .foregroundStyle(Color(.white))
-                            .font(.ralewayRegular(size: 16))
+                    .padding()
+                    .background {
+                        Color.white
+                            .frame(maxWidth: .infinity)
                     }
-                    HStack(spacing: 20) {
-                        HStack(spacing: 10) {
-                            Image(systemName: "bed.double")
-                            Text("4 Bedroom" )
-                                .font(.ralewayRegular(size: 16))
-                        }
-                        HStack(spacing: 10) {
-                            Image(systemName: "toilet")
-                            Text("4 Bathroom" )
-                                .font(.ralewayRegular(size: 16))
-                        }
-                    }
-                    .foregroundStyle(.white)
-                }
-                .padding()
+                })
             }
+            .navigationBarBackButtonHidden()
         }
-        .navigationBarBackButtonHidden()
         Spacer()
     }
+
 }
 
 #Preview {
-    DetailsView()
+   DetailsView()
 }
+

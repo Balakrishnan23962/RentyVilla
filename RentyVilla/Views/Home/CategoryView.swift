@@ -11,23 +11,46 @@ struct CategoryView: View {
     var category: CategoryModel = .house
     @State var search = ""
     @State var isSelectedCategory: CategoryModel = .house
+    @State var isTouch: Bool = true
     var body: some View {
         VStack {
             HStack {
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .frame(width: 22, height: 22)
-                        .foregroundStyle(.gray)
-                    TextField(text: $search) {
-                        Text("Search address, or near you")
+                if isTouch {
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .frame(width: 22, height: 22)
+                            .foregroundStyle(.gray)
+                        TextField(text: $search) {
+                            Text("Search address, or near you")
+                                .font(.custom("Raleway-Regular", size: 15))
+                        }
+                        .autocorrectionDisabled()
+                    }
+                    .padding()
+                    .background(Color(.systemGray6).opacity(0.4))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding(.leading)
+                } else {
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .frame(width: 22, height: 22)
+                            .foregroundStyle(.gray)
+                        Text("Search")
                             .font(.custom("Raleway-Regular", size: 15))
                     }
+                    .padding()
+                    .background {
+                        Color(.systemGray6).opacity(0.4)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding(.leading)
+                    .onTapGesture {
+                        
+                    }
                 }
-                .padding()
-                .background(Color(.systemGray6).opacity(0.4))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding(.leading)
                 if !search.isEmpty {
                     Button {
                         search = ""
@@ -69,12 +92,12 @@ struct CategoryView: View {
                                 isSelectedCategory = category
                             }
                     }
-//                    .scrollTargetLayout()
+                    .scrollTargetLayout()
                 }
                 .padding()
             }
             .scrollIndicators(.hidden)
-//            .scrollTargetBehavior(.viewAligned)
+            .scrollTargetBehavior(.viewAligned)
         }
     }
 }
